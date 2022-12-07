@@ -28,14 +28,11 @@ num = input('Enter the data: ')
 try:
     # num = float(num)
     if num == 'logical reads':
-        
-
-        print(num)
+        num = " " + num
+    print(num)
 except ValueError:
     print('The provided value is not a number')
-
 num = 0 
-
 while True:
     try:
         num = int(input("Enter your favorite integer: "))
