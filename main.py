@@ -18,20 +18,22 @@
 # identity(42)
 # load_fp = input('Enter your damn file path(use foward slash), brad: ')
 # filepath = 'C:/Users/ranch/Downloads/jack.txt'
-mylines = []
-with open('C:/Users/ranch/Downloads/jack.txt', 'rt') as fp:
-    for line in fp:
-        mylines.append(line.rstrip('\n'))
-for element in mylines:
-    print(element)
-    # line = fp.readline()
-    # cnt = 1
-    # while line:
-    #     print("Line{}:{}".format(cnt,line.strip()))
-    #     line = fp.readline()
-    #     cnt += 1
 
-# num = input('Enter the data: ')
+# mylines = []
+with open('C:/Users/ranch/Downloads/jack.txt', 'rt') as fp:
+#     for line in fp:
+#         mylines.append(line.rstrip('\n'))
+# for element in mylines:
+#     print(element)
+
+    line = fp.readline()
+    cnt = 1
+    while line:
+        print("Line{}:{}".format(cnt,line.strip()))
+        line = fp.readline()
+        cnt += 1
+
+    num = input('Enter the data: ')
 
 # try:
     # num = float(num)
