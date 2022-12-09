@@ -75,6 +75,8 @@ for line in text:
          lineVal = sum(map(int, match))
          final.append(lineVal)
         #  print("line sum = {0}".format(lineVal))
-print("Final sum = {0}".format(np.sum(final)))
-input("Press enter to close program")
+write = open('result.txt' , 'w')
+write.write("Final sum = {0}".format(str(np.sum(final))))      
+# print("Final sum = {0}".format(np.sum(final)))
+# input("Press enter to close program")
 # -------------------------------------------------------
