@@ -1,3 +1,4 @@
+# import re
 # numbers = [-2,-1,0,1,2]
 # def extract_positive(numbers):
 #     positive_numbers = []
@@ -18,22 +19,9 @@
 # identity(42)
 # load_fp = input('Enter your damn file path(use foward slash), brad: ')
 # filepath = 'C:/Users/ranch/Downloads/jack.txt'
-
-# mylines = []
-with open('C:/Users/ranch/Downloads/jack.txt', 'rt') as fp:
-#     for line in fp:
-#         mylines.append(line.rstrip('\n'))
+            # print(sum(nums))
 # for element in mylines:
 #     print(element)
-
-    line = fp.readline()
-    cnt = 1
-    while line:
-        print("Line{}:{}".format(cnt,line.strip()))
-        line = fp.readline()
-        cnt += 1
-
-    num = input('Enter the data: ')
 
 # try:
     # num = float(num)
@@ -52,3 +40,40 @@ with open('C:/Users/ranch/Downloads/jack.txt', 'rt') as fp:
 #     else:
 #         print(f'You entered: {num}')
 #         break
+
+# import re
+# with open('C:/Users/J/Downloads/jack.txt', 'rt') as fp:
+#     line = fp.readline()
+#     while line:
+#         match= re.search(r'(?<=logical reads )[^,]*',line)
+#         if match is not None:
+#             nums = int(match.group(0))
+#             list_nums = [nums]
+#             print(sum(list_nums))    
+#         line = fp.readline()
+
+# --------- close -------------
+# path = 'C:/Users/J/Downloads/jack.txt'
+# with open(path) as fp:
+#     for line in fp:
+#         match= re.search(r'(?<=logical reads )[^,]*',line)
+#         if match is not None:
+#             nums = int(match.group(0)) 
+#             print(nums)
+# --------------------------------------------------
+import re
+import np
+usrInput = input("Stop asking me to calculate, Enter dir path: ")
+# text = open('C:/Users/J/Downloads/jack.txt')
+text = open(usrInput)
+final = []
+for line in text:
+    line = line.strip()
+    y = re.findall('(?<=logical reads )[^,]*',line)
+
+    if len(y) > 0:
+         lineVal = sum(map(int, y))
+         final.append(lineVal)
+        #  print("line sum = {0}".format(lineVal))
+print("Final sum = {0}".format(np.sum(final)))
+# -------------------------------------------------------
