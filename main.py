@@ -76,4 +76,5 @@ for line in text:
          final.append(lineVal)
         #  print("line sum = {0}".format(lineVal))
 print("Final sum = {0}".format(np.sum(final)))
+input("Press enter to close program")
 # -------------------------------------------------------
