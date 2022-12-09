@@ -60,21 +60,23 @@
 #         if match is not None:
 #             nums = int(match.group(0)) 
 #             print(nums)
-# --------------------------------------------------
-import re
-import np
+# -------------------------------------------------------
+import re,np,math
 usrInput = input("Stop asking me to calculate, Enter dir path: ")
-# text = open('C:/Users/J/Downloads/jack.txt')
+# text = open('C:/Users/ranch/Downloads/jack.txt')
 text = open(usrInput)
 final = []
 for line in text:
     line = line.strip()
-    y = re.findall('(?<=logical reads )[^,]*',line)
+    match = re.findall('(?<=logical reads )[^,]*',line)
 
-    if len(y) > 0:
-         lineVal = sum(map(int, y))
+    if len(match) > 0:
+         lineVal = (sum(map(int, match))*8096)/1000000
          final.append(lineVal)
         #  print("line sum = {0}".format(lineVal))
-print("Final sum = {0}".format(np.sum(final)))
-input("Press enter to close program")
-# -------------------------------------------------------
+write = open('result.txt' , 'w')
+write.write("Final sum = {: ,} ".format(math.ceil(np.sum(final))) + "MB")
+# print("Final sum = {: ,}".format(np.sum(final)),"MB")    
+# print("Final sum = {: ,} ".format(math.ceil(np.sum(final))) + "MB")
+# input("Press enter to close program")
+# --------------------------------------------------------------
