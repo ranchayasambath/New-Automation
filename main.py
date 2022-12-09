@@ -64,15 +64,15 @@
 import re
 import np
 usrInput = input("Stop asking me to calculate, Enter dir path: ")
-# text = open('C:/Users/J/Downloads/jack.txt')
+# text = open('C:/Users/ranch/Downloads/jack.txt')
 text = open(usrInput)
 final = []
 for line in text:
     line = line.strip()
-    y = re.findall('(?<=logical reads )[^,]*',line)
+    match = re.findall('(?<=logical reads )[^,]*',line)
 
-    if len(y) > 0:
-         lineVal = sum(map(int, y))
+    if len(match) > 0:
+         lineVal = sum(map(int, match))
          final.append(lineVal)
         #  print("line sum = {0}".format(lineVal))
 print("Final sum = {0}".format(np.sum(final)))
