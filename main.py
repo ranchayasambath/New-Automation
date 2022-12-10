@@ -71,7 +71,6 @@ for line in text:
     match = re.findall('(?<=logical reads )[^,]*',line)
 
     if len(match) > 0:
-<<<<<<< HEAD
          lineVal = (sum(map(int, match))*8096)/1000000
          final.append(lineVal)
         #  print("line sum = {0}".format(lineVal))
@@ -81,13 +80,3 @@ write.write("Final sum = {: ,} ".format(math.ceil(np.sum(final))) + "MB")
 # print("Final sum = {: ,} ".format(math.ceil(np.sum(final))) + "MB")
 # input("Press enter to close program")
 # --------------------------------------------------------------
-=======
-         lineVal = (sum(map(int, match))*8096)*1000000
-         final.append(lineVal)
-        #  print("line sum = {0}".format(lineVal))
-write = open('result.txt' , 'w')
-write.write("Final sum = {: ,} ".format(np.sum(final)) + "MB")     
-# print("Final sum = {: ,}".format(np.sum(final)),"MB")
-# input("Press enter to close program")
-# -------------------------------------------------------
->>>>>>> 25c62a853b66628fd8eb38a99c0b726f9e46d953
